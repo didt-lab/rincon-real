@@ -245,22 +245,9 @@ input {
 
 
 
-.header__whatsapp {
-    width: 40px;
-    height: 40px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 20px;
-    transition: var(--transition);
-}
 
-.header__whatsapp:hover {
-    transform: scale(1.1);
-}
+
+
 
 .nav__toggle,
 .nav__close {
