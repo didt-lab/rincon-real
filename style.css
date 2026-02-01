@@ -281,7 +281,7 @@ input {
 .hero__background {
     position: absolute;
     inset: 0;
-    background: url('img/RR_IMG_3.png') center/cover no-repeat;
+    background: url('img/RR_IMG_3.webp') center/cover no-repeat;
     z-index: -1;
     filter: brightness(1.05) saturate(1.2) sepia(15%) hue-rotate(-10deg);
 }
