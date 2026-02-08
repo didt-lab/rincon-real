@@ -268,7 +268,7 @@ input {
 .hero__background {
     position: absolute;
     inset: 0;
-    background: url('img/RR_IMG_3.webp') center/cover no-repeat;
+    background: url('img/RR_IMG_3.webp') center/cover no-repeat fixed;
     z-index: -1;
     filter: brightness(1.05) saturate(1.2) sepia(15%) hue-rotate(-10deg);
 }
@@ -500,6 +500,9 @@ input {
 .stat__icon {
     width: 50px;
     height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    flex-shrink: 0;
     background: linear-gradient(135deg, var(--primary), var(--primary-light));
     border-radius: 50%;
     display: flex;
@@ -1129,6 +1132,21 @@ input {
         padding: 10px 14px;
     }
 
+    .hero__background {
+        background-attachment: scroll;
+        background-size: contain;
+        background-position: top center;
+        background-color: var(--gray-100);
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero__container {
+        padding: 30px 15px;
+    }
+
     .hero__title {
         flex-direction: column;
         align-items: center;
@@ -1141,15 +1159,27 @@ input {
     }
 
     .about__stats {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+        max-width: 100%;
+        padding: 0 15px;
     }
 
     .stat {
-        flex: 0 0 calc(50% - 10px);
-        max-width: calc(50% - 10px);
+        width: 100%;
+        padding: 15px;
         justify-content: flex-start;
+    }
+
+    .stat:last-child {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .stat__icon {
+        flex-shrink: 0;
     }
 
     .testimonials__grid {
