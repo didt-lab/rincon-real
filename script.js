@@ -305,6 +305,32 @@ if ('IntersectionObserver' in window) {
     });
 }
 
+// ===== Testimonials Carousel =====
+const testimonialsImgs = document.querySelectorAll('.testimonials__carousel-img');
+const testimonialsPrevBtn = document.querySelector('.testimonials__carousel-btn--prev');
+const testimonialsNextBtn = document.querySelector('.testimonials__carousel-btn--next');
+let currentTestimonialImg = 0;
+
+function showTestimonialImg(n) {
+    testimonialsImgs.forEach(img => img.classList.remove('active'));
+    currentTestimonialImg = (n + testimonialsImgs.length) % testimonialsImgs.length;
+    testimonialsImgs[currentTestimonialImg].classList.add('active');
+}
+
+if (testimonialsPrevBtn && testimonialsNextBtn) {
+    testimonialsPrevBtn.addEventListener('click', () => {
+        showTestimonialImg(currentTestimonialImg - 1);
+    });
+
+    testimonialsNextBtn.addEventListener('click', () => {
+        showTestimonialImg(currentTestimonialImg + 1);
+    });
+
+    setInterval(() => {
+        showTestimonialImg(currentTestimonialImg + 1);
+    }, 4000);
+}
+
 // ===== Console Welcome Message =====
 console.log('%c🏠 Rincón Real - Casas en Mazatlán', 'font-size: 20px; font-weight: bold; color: #2745DF;');
 console.log('%cDesarrollado por XAN', 'font-size: 12px; color: #666;');
